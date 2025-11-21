@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24127" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cOA-Fk-dvV">
+    <device id="retina6_3" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24063"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="NEO-a8-vtP">
+            <objects>
+                <viewController id="cOA-Fk-dvV" customClass="ViewController" customModule="AudioPlayer3" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wWj-ku-3IH">
+                        <rect key="frame" x="0.0" y="0.0" width="402" height="874"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="le0-4x-73k">
+                                <rect key="frame" x="16" y="144" width="370" height="622"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PQX-PB-0jR">
+                                        <rect key="frame" x="0.0" y="0.0" width="370" height="370"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="PQX-PB-0jR" secondAttribute="height" multiplier="1:1" id="F6t-fG-1XR"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Song Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v9w-E8-pFU">
+                                        <rect key="frame" x="0.0" y="378" width="370" height="28.666666666666686"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xfD-5w-jab">
+                                        <rect key="frame" x="0.0" y="414.66666666666663" width="370" height="18"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                        <color key="textColor" systemColor="secondaryLabelColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="dvk-SQ-IA4">
+                                        <rect key="frame" x="0.0" y="440.66666666666663" width="370" height="34"/>
+                                        <connections>
+                                            <action selector="sliderValueChanged:" destination="cOA-Fk-dvV" eventType="valueChanged" id="z2V-z4-cwc"/>
+                                        </connections>
+                                    </slider>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="PmC-MN-R6Q">
+                                        <rect key="frame" x="0.0" y="482.66666666666657" width="370" height="139.33333333333331"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cgq-dW-oGQ">
+                                                <rect key="frame" x="0.0" y="52.666666666666742" width="56" height="34.333333333333343"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="backward.fill" catalog="system"/>
+                                                <connections>
+                                                    <action selector="previousTapped:" destination="cOA-Fk-dvV" eventType="touchUpInside" id="0MR-cL-RCM"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0YT-qM-XpZ">
+                                                <rect key="frame" x="163.33333333333334" y="52.666666666666742" width="43.333333333333343" height="34.333333333333343"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="play.fill" catalog="system"/>
+                                                <connections>
+                                                    <action selector="playPauseTapped:" destination="cOA-Fk-dvV" eventType="touchUpInside" id="Rdw-Sd-Scr"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sA5-qA-B5p">
+                                                <rect key="frame" x="314" y="52.666666666666742" width="56" height="34.333333333333343"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="forward.fill" catalog="system"/>
+                                                <connections>
+                                                    <action selector="nextTapped:" destination="cOA-Fk-dvV" eventType="touchUpInside" id="YQ1-mL-6OW"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="v9w-E8-pFU" firstAttribute="top" secondItem="PQX-PB-0jR" secondAttribute="bottom" constant="8" symbolic="YES" id="iyw-DM-cUJ"/>
+                                    <constraint firstItem="v9w-E8-pFU" firstAttribute="top" secondItem="PQX-PB-0jR" secondAttribute="bottom" constant="16" id="rAB-As-Rr9"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="dzc-YH-fsn"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="le0-4x-73k" firstAttribute="leading" secondItem="dzc-YH-fsn" secondAttribute="leading" constant="16" id="7hX-hk-Sw6"/>
+                            <constraint firstItem="le0-4x-73k" firstAttribute="top" secondItem="dzc-YH-fsn" secondAttribute="top" constant="20" id="X6d-md-dNT"/>
+                            <constraint firstItem="dzc-YH-fsn" firstAttribute="bottom" secondItem="le0-4x-73k" secondAttribute="bottom" constant="40" id="eL3-6g-yPQ"/>
+                            <constraint firstItem="dzc-YH-fsn" firstAttribute="trailing" secondItem="le0-4x-73k" secondAttribute="trailing" constant="16" id="kUv-x2-ieR"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="albumImageView" destination="PQX-PB-0jR" id="5cp-Ai-yQR"/>
+                        <outlet property="artistLabel" destination="xfD-5w-jab" id="1Rq-bk-fhi"/>
+                        <outlet property="nextButton" destination="sA5-qA-B5p" id="adh-CS-cuE"/>
+                        <outlet property="playPauseButton" destination="0YT-qM-XpZ" id="Cjo-rk-2WZ"/>
+                        <outlet property="previousButton" destination="cgq-dW-oGQ" id="NsQ-mL-4l7"/>
+                        <outlet property="progressSlider" destination="dvk-SQ-IA4" id="92K-vl-wLP"/>
+                        <outlet property="songTitleLabel" destination="v9w-E8-pFU" id="pJc-8u-QIA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bCr-VK-JnR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-686.15384615384608" y="608.53080568720372"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="backward.fill" catalog="system" width="128" height="76"/>
+        <image name="forward.fill" catalog="system" width="128" height="76"/>
+        <image name="play.fill" catalog="system" width="120" height="128"/>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
